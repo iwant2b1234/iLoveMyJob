@@ -1,0 +1,197 @@
+@import './reset.scss';
+@import "@/scss/icons.scss";
+//  ==========@mixin=============
+
+//按鈕
+@mixin btnSetting($bg, $color, $width, $height, $radius:50px) {
+    display: block;
+    background-color: $bg;
+    color: $color;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    box-sizing: border-box;
+    border: none;
+    border-radius: $radius;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    font-size: 15px;
+}
+
+// 彩種背景
+@mixin bgSetting($imgRoot, $imgSize:88%) {
+    background: url(../img/lobbyimg/#{$imgRoot}.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $imgSize;
+}
+
+//訊號
+@mixin Signal($height, $left, $isShow:block){
+    width: 1.8px;
+    height: $height;
+    background: $thirdFont;
+    backface-visibility: hidden;
+    position: absolute;
+    left: $left;
+    display: $isShow;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    &:active{
+        text-decoration: none;
+        outline:none;
+    }
+}
+
+// 基本設定
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    // text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+}
+
+html {
+    height: 100vh;
+    line-height: 16px;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Charcoal';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    user-select: none;
+}
+
+//scrollbar
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(199, 199, 199, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 217, 0,.6);
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    transition: .6s;
+    background: #555;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+    &:hover, &:active{
+        outline:none;
+    }
+}
+
+button{
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+    overflow: hidden;
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all .3s;
+    position: relative;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+input,
+textarea {
+    font-size: 15px;
+    &::placeholder {
+        // color: rgba($baseFont,.7);
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type="submit"], input[type="button"]{
+    -webkit-appearance: button !important;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input:active, input:hover, input:focus{
+    outline: none;
+}
+
+.read{
+    width: 100px;
+    margin:10px auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    span {
+      position: initial;
+      font-size: 14px;
+      width: auto;
+      height: auto;
+      background: transparent;
+    }
+    .square {
+      width: 4px;
+      height: 4px;
+      border-radius: 50px;
+      margin: 0 3px;
+      background:tomato;
+      animation: loadingFade 1s infinite;
+      &:nth-child(3) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+    }
+  }
+  @keyframes loadingFade {
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; }
+  }
+
+.lightBox{
+    position: fixed;
+    top: 43px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    overflow: hidden;
+    cursor: pointer;
+}
