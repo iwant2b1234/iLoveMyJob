@@ -16,11 +16,11 @@ module.exports = {
     outputDir: 'docs',
     css: {
       loaderOptions: {
-        sass: {
-          prependData: `
-          @import "@/scss/common.scss";
-          `
-        }
+        // sass: {
+        //   prependData: `
+        //   @import "@/scss/common.scss";
+        //   `
+        // }
       }
     },
     configureWebpack: {
