@@ -11,7 +11,7 @@ const path = require('path');
 // const nameStr = `${envChannel}-${user}-${defaultTemplate}-v${version}`
 
 module.exports = {
-    publicPath: '/',
+    publicPath: './',
     // productionSourceMap:process.env.VUE_APP_BASIC_TYPE=='dev'?true:false,
     outputDir: 'docs',
     css: {
